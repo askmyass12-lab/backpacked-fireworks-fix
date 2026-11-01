@@ -1,0 +1,24 @@
+plugins {
+    id 'net.neoforged.moddev' version '1.0.21'
+}
+
+version = '1.0.0'
+group = 'com.example.backpackedaddon'
+
+repositories {
+    maven { url 'https://blamejared.com' }
+}
+
+neoForm {
+    version = '1.21.1-20240808.144430'
+}
+
+dependencies {
+    // Подключаем сам Backpacked, чтобы наш код видел его функции
+    // Версия указана примерная для 1.21.1
+    implementation "curse.maven:backpacked-351543:5621456" 
+}
+
+subprojects {
+    apply plugin: 'net.neoforged.moddev'
+}
